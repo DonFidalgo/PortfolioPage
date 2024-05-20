@@ -1,0 +1,143 @@
+<!DOCTYPE html5>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LuisFidalgo </title>
+</head>
+
+<body>
+    <div class="parallax">
+        <!-- HEADER -->
+        <header>
+            <h1 class="logo"><span style="color: #425c5f">.LF</span><span style="color: #ffae00">{}</span></h1>
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#section2">About</a></li>
+                    <li><a href="#section3">Games</a></li>
+                </ul>
+            </nav>
+        </header>
+        <video playsinline autoplay muted loop id="bgvidintro">
+            <source src="assets/videos/Intro.mkv" type="video/webm">
+        </video>
+        <!-- HOME -->
+        <div class="container">
+            <div id="title">
+                <p>Hello my name is <span style="color: #2d3e40">Luis Fidalgo</span></p>
+                <h1>I design and develop <br><span class="auto-type"></span></h1>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('.auto-type', {
+            strings: ["Games", "Websites", "2D and 3D Art", "Music", "Worlds"],
+            typeSpeed: 75,
+            backSpeed: 75,
+            loop: true
+        });
+    </script>
+    <!-- ABOUT -->
+    <div id="section2">
+        <div class="container-img">
+            <div class="image-container">
+                <div class="image-diff">
+                </div>
+            </div>
+            <input type="range" class="slider" value="50" />
+        </div>
+        <div class="text">
+            <h1>About Me</h1>
+            <p>Hello, I'm Luis Fidalgo, long time drummer, game developer, and creative enthusiastic. I'm passionate
+                about creating and designing new
+                things. I'm always looking for new challenges and opportunities to learn and grow. I'm looking
+                for new projects and opportunities to work with new people, as i'm new to this world, as i've spent most
+                of my professional
+                carreer working in the mechanical field, and now decided to change to something more aligned with my
+                interest in developing games and art. If you have a project in mind feel free to
+                contact me. <br><br></p>
+        </div>
+        <div class="text">
+            <h1>Education</h1>
+            <p>2006 - 12th Grade, Arts, Escola Secundária de Amato Lusitano, Castelo Branco</p>
+            <p>2007-2009 - Professional Course in Studio Audio Recording, E.T.I.C, Lisbon</p>
+            <p>2021-2023 - Professional Course in Web and Multimedia Development, Escola Superior de Técnologia, Castelo
+                Branco<br><br></p>
+        </div>
+        <div class="text">
+            <h1>Skills</h1>
+            <p>Game Development - Unity, C#</p>
+            <p>Web Development - HTML, CSS, JavaScript</p>
+            <p>3D Art - Blender</p>
+            <p>2D Art - Photoshop, Illustrator</p>
+            <p>Music Production - Any software and driver hardware</p>
+            <p>Version Control - Git <!-- <br><br><br> -->
+            </p>
+        </div>
+        <div class="text" id="contacts">
+            <h1>Contact</h1>
+            <p>Email - <span id="email">luisfidalgodev@gmail.com</span> <button
+                    onclick="copyToClipboard('email')">Copy</button></p>
+            <p>LinkedIn - <span id="linkedin">linkedin.com/in/luis-fidalgo-dev/</span> <button
+                    onclick="copyToClipboard('linkedin')">Copy</button></p>
+        </div>
+    </div>
+    <script>
+        function copyToClipboard(elementId) {
+            var tempInput = document.createElement("input");
+            tempInput.value = document.getElementById(elementId).innerText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Copiado para a área de transferência: " + tempInput.value);
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageDiff = document.querySelector('.image-diff');
+            const slider = document.querySelector('.slider');
+            let sliderValue = parseInt(slider.value);
+            let direction = 1;
+            const sliderSpeed = 1; 
+            const interval = 55;
+
+            function moveSlider() {
+                sliderValue += direction * sliderSpeed;
+                if (sliderValue >= 80) {
+                    sliderValue = 80;
+                    direction = -1;
+                } else if (sliderValue <= 20) {
+                    sliderValue = 20;
+                    direction = 1;
+                }
+                imageDiff.style.clipPath = `inset(0 ${100 - sliderValue}% 0 0)`;
+                slider.value = sliderValue;
+                setTimeout(moveSlider, interval);
+            }
+
+            moveSlider();
+        });
+    </script>
+    <div class="section3" id="section3">
+        <div class="text text2">
+            <video playsinline autoplay muted loop id="bgvid">
+                <source src="assets/videos/BackgroundVideo.mkv" type="video/webm">
+            </video>
+            <h1 class="gamesTitle">Games</h1>
+            <img id="ndimg" src="assets/images/NightDriver.png" alt="">
+
+            <p class="ndtext">Developed with Unity, Night Driver is my first Game as a solo developer, there is a
+                test build available
+                <a href="https://lfdev.itch.io/night-driver">here</a>, and you can download it for free, please give it a go and embrace the speed through the night
+                fog.
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
