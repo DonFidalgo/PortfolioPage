@@ -95,11 +95,6 @@ nav ul li a:hover::after {
   z-index: 3;
 }
 
-#bgvidintro {
-  --parallax-speed: 5;
-}
-
-
 
 .container-img {
   margin-top: 35px;
