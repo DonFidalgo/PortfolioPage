@@ -88,15 +88,15 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   text-align: left;
-  height: 100vh;
   width: fit-content;
-  --parallax-speed: 13;
+  height: fit-content;
+  --parallax-speed: 10;
   overflow: hidden;
   z-index: 3;
 }
 
 #bgvidintro {
-  --parallax-speed: 11;
+  --parallax-speed: 5;
 }
 
 
@@ -250,6 +250,7 @@ video {
     top: 0;
     left: 0;
     z-index: -1;
+    
   }
 
 #ndimg {
