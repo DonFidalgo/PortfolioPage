@@ -82,7 +82,7 @@ nav ul li a:hover::after {
 }
 
 .container {
-  top: 10%;
+  top: 14%;
   left:10%;
   position: relative;
   display: flex;
@@ -90,7 +90,7 @@ nav ul li a:hover::after {
   text-align: left;
   width: fit-content;
   height: fit-content;
-  --parallax-speed: 10;
+  --parallax-speed: 7;
   overflow: hidden;
   z-index: 3;
 }
